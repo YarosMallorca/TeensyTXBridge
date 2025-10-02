@@ -1,6 +1,7 @@
 # Teensy TX Bridge
 
-Teensy TX Bridge is a firmware that allows you to control RC transmitters over the Trainer port using PPM, over a USB Serial connection.
+Teensy TX Bridge is a firmware that allows you to control RC transmitters via the Trainer port using PPM, over a USB Serial connection.
+
 This allows you to make your own control scheme for your aircraft, by sending commands from a computer in real-time.
 This can be used, for example, to control an aircraft using a non-standard controller such as a flight simulator setup, or a custom-built controller.
 
@@ -41,11 +42,12 @@ These are the available commands:
 | ----------------------- | ---------------------------------------------------- |
 | `CH:1500,1500,1000,...` | Set channel pulse widths (up to 16, comma-separated) |
 | `FS`                    | Force failsafe immediately (manual trigger)          |
-| `RST`                   | Reset manual failsafe and resume normal operation    |
+| `RST`                   | Reset failsafe and resume normal operation           |
 
 In the firmware, a default failsafe configuration and timeout are configured. If no valid channel data is received within the timeout period (500ms by default), or if the `FS` command is received, the Teensy will output the failsafe channel values.
 
-To reset the failsafe, send the `RST` command.
+To reset the failsafe, and resume normal operation, send the `RST` command.
+Always send this command in the beginning of your client script, after connecting to the Teensy and when your control source is ready to send valid channel data.
 
 ## Software Setup
 
