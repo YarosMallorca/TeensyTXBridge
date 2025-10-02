@@ -19,8 +19,8 @@ Cut off one side of the 3.5mm TRS cable and strip the wires, then connect them t
 
 | TRS Pin | Teensy Pin | Function          |
 | ------- | ---------- | ----------------- |
-| Tip     | GND        | Ground            |
-| Ring    | PPM_PIN    | PPM Signal Output |
+| Sleeve  | GND        | Ground            |
+| Tip     | PPM_PIN    | PPM Signal Output |
 
 Valid pins by board type:
 
